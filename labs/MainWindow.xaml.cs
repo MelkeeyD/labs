@@ -352,5 +352,10 @@ namespace labs
                 MessageBox.Show(stop, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
+        private void Button_Click_7(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
