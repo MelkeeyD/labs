@@ -11,5 +11,6 @@
         <Label Content="Количество элементов массива:" HorizontalAlignment="Left" Margin="10,14,0,0" VerticalAlignment="Top"/>
         <ListBox HorizontalAlignment="Left" Height="396" Margin="202,14,0,0" VerticalAlignment="Top" Width="231" Name="lbElements"/>
         <Button Content="Задание 1" HorizontalAlignment="Left" Margin="438,14,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="Задание 2" HorizontalAlignment="Left" Margin="533,14,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
     </Grid>
 </Window>
