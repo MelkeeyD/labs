@@ -19,5 +19,6 @@
         <Button Content="Задание 9" HorizontalAlignment="Left" Margin="438,62,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_6"/>
         <Button Content="Задание 10" HorizontalAlignment="Left" Margin="533,62,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_7"/>
         <Button Content="Задание 12" HorizontalAlignment="Left" Margin="623,62,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_8"/>
+        <Button Content="Задание 14" HorizontalAlignment="Left" Margin="438,86,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_9"/>
     </Grid>
 </Window>
