@@ -126,5 +126,48 @@ namespace labs
                 MessageBox.Show(stop, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            lbElements.Items.Clear();
+            try
+            {
+                int n = Convert.ToInt32(countElements.Text);
+                if (n < 1)
+                {
+                    string stop1 = "Необходимо ввести числовое значение не меньшее единицы.";
+                    MessageBox.Show(stop1, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                else
+                {
+                    ArrayList Coll = AllFunc.NewCol(n);
+                    ArrayList buffer = new ArrayList();
+                    lbElements.Items.Add("Исходный массив");
+                    AllFunc.Tes(Coll, lbElements);
+                    lbElements.Items.Add(" элементов массива составляют со своими соседями и их соседями\n (от i-2 до i+2, где i - индекс позиция текущего элемента )\n упорядоченную последовательность:");
+                    int count = 0;
+                    buffer.Add(Coll[n - 2]);
+                    buffer.Add(Coll[n - 1]);
+                    for (int i = 0; i < n; i++) {
+                        buffer.Add(Coll[i]);        
+                    }
+                    buffer.Add(Coll[0]);
+                    buffer.Add(Coll[1]);
+
+                    for (int i = 2; i < n + 2; i++) {
+                        if (((int)buffer[i - 2] > (int)buffer[i - 1] && (int)buffer[i - 1] > (int)buffer[i] && (int)buffer[i] > (int)buffer[i + 1] && (int)buffer[i + 1] > (int)buffer[i + 2])
+                            || ((int)buffer[i - 2] < (int)buffer[i - 1] && (int)buffer[i - 1] < (int)buffer[i] && (int)buffer[i] < (int)buffer[i + 1] && (int)buffer[i + 1] < (int)buffer[i + 2])) {
+                            count++;    
+                        }
+                    }
+                    lbElements.Items.Add(count);
+                }
+            }
+            catch
+            {
+                string stop = "Необходимо ввести числовое значение";
+                MessageBox.Show(stop, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
     }
 }
