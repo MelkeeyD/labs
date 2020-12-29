@@ -145,5 +145,41 @@ namespace labs
                 MessageBox.Show(stop, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            lbElements.Items.Clear();
+            try
+            {
+                int n = Convert.ToInt32(countElements.Text);
+                if (n < 1)
+                {
+                    string stop1 = "Необходимо ввести числовое значение не меньше единицы.";
+                    MessageBox.Show(stop1, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                else
+                {
+                    ArrayList Coll = AllFunc.NewCol(n);
+                    lbElements.Items.Add("Исходный массив");
+                    AllFunc.Tes(Coll, lbElements);
+                    lbElements.Items.Add("Отклонения от среднего значения элементов массива:");
+                    double sum = 0;
+                    for (int i = 0; i < n; i++)
+                    {
+                        sum += (int)Coll[i];
+                    }
+                    sum = Math.Round(sum, 1) / n;
+                    for (int i = 0; i < n; i++)
+                    {
+                        lbElements.Items.Add(Coll[i] + " - " + sum + " = " + (Coll[i] = (int)Coll[i] - sum));
+                    }
+                }
+            }
+            catch
+            {
+                string stop = "Необходимо ввести числовое значение";
+                MessageBox.Show(stop, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
     }
 }
